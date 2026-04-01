@@ -16,6 +16,18 @@ export interface AppVersion {
 export const APP_VERSIONS: AppVersion[] = [
   {
     id: '1',
+    version: '1.1.0',
+    releaseDate: '01 April 2026',
+    filename: 'pos-panglima-v1.1.0.apk',
+    size: '54 MB',
+    changelog: [
+      'Rilis: Versi 1.1.0',
+      'Update: Peningkatan performa, perbaikan bug minor',
+    ],
+    isLatest: true,
+  },
+  {
+    id: '2',
     version: '1.0.0',
     releaseDate: '01 April 2026',
     filename: 'pos-panglima-v1.0.0.apk',
