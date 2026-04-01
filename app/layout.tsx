@@ -7,9 +7,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'POS Panglima - Download & Panduan',
-  description: 'Download aplikasi POS Panglima terbaru dan pelajari cara penggunaannya dengan panduan lengkap',
-  generator: 'v0.app',
+  title: 'Distribusi POS Panglima v1.1.0 - Internal Only',
+  description: 'Update stabil v1.1.0 (Size: 54MB). Klik untuk download aplikasi terbaru dan akses dokumentasi teknis serta panduan penggunaan.',
+  // generator: 'v0.app',
   icons: {
     icon: [
       {
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/app-icon.png',
+        type: 'image/png',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/app-icon.png',
   },
 }
 
