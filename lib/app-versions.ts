@@ -15,77 +15,17 @@ export interface AppVersion {
 
 export const APP_VERSIONS: AppVersion[] = [
   {
-    id: '16',
-    version: '1.1.4',
-    releaseDate: '07 April 2026',
-    filename: 'pos-panglima-v1.1.4.apk',
+    id: '1',
+    version: '1.1.5',
+    releaseDate: '09 April 2026',
+    filename: 'pos-panglima-v1.1.5.apk',
     size: '55 MB',
     changelog: [
-      'Rilis: Versi 1.1.4',
-      'Perbaikan bug minor',
+      'Rilis: Versi 1.1.5',
+      'Perbaikan: bug minor, Crash/black screen',
     ],
     isLatest: true,
-  },
-  {
-    id: '15',
-    version: '1.1.3',
-    releaseDate: '04 April 2026',
-    filename: 'pos-panglima-v1.1.3.apk',
-    size: '54 MB',
-    changelog: [
-      'Rilis: Versi 1.1.3',
-      'Perbaikan bug minor',
-    ],
-    isLatest: false,
-  },
-  {
-    id: '14',
-    version: '1.1.2',
-    releaseDate: '04 April 2026',
-    filename: 'pos-panglima-v1.1.2.apk',
-    size: '54 MB',
-    changelog: [
-      'Rilis: Versi 1.1.2',
-      'Update: Peningkatan performa, perbaikan bug minor',
-    ],
-    isLatest: false,
-  },
-  {
-    id: '13',
-    version: '1.1.1',
-    releaseDate: '01 April 2026',
-    filename: 'pos-panglima-v1.1.1.apk',
-    size: '54 MB',
-    changelog: [
-      'Rilis: Versi 1.1.1',
-      'Update: Peningkatan performa, perbaikan bug minor',
-    ],
-    isLatest: false,
-  },
-  {
-    id: '12',
-    version: '1.1.0',
-    releaseDate: '01 April 2026',
-    filename: 'pos-panglima-v1.1.0.apk',
-    size: '54 MB',
-    changelog: [
-      'Rilis: Versi 1.1.0',
-      'Update: Peningkatan performa, perbaikan bug minor',
-    ],
-    isLatest: false,
-  },
-  {
-    id: '11',
-    version: '1.0.0',
-    releaseDate: '01 April 2026',
-    filename: 'pos-panglima-v1.0.0.apk',
-    size: '52 MB',
-    changelog: [
-      'Pra Rilis: Versi 1.0.0',
-      'Fitur: Manajemen Produk, Penjualan, Laporan Penjualan',
-    ],
-    isLatest: false,
-  },
+  }
 ];
 
 export const getLatestVersion = (): AppVersion => {
