@@ -3,7 +3,70 @@
 import { GUIDE_STEPS } from '@/lib/guide-data';
 import { Card } from '@/components/ui/card';
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+
+function ImageCarousel({ images }: { images: string[] }) {
+  const [current, setCurrent] = useState(0);
+
+  if (images.length === 0) return null;
+
+  return (
+    <div className="mt-4">
+      <div className="relative overflow-hidden rounded-lg border border-border bg-black/5">
+        <div className="relative aspect-video w-full">
+          <Image
+            src={images[current]}
+            alt={`Screenshot ${current + 1}`}
+            fill
+            className="object-contain"
+            sizes="(max-width: 768px) 100vw, 800px"
+          />
+        </div>
+
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrent((prev) => (prev - 1 + images.length) % images.length);
+              }}
+              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white transition-colors hover:bg-black/70"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrent((prev) => (prev + 1) % images.length);
+              }}
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white transition-colors hover:bg-black/70"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </>
+        )}
+      </div>
+
+      {images.length > 1 && (
+        <div className="mt-2 flex items-center justify-center gap-1.5">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrent(idx);
+              }}
+              className={`h-2 w-2 rounded-full transition-colors ${
+                idx === current ? 'bg-primary' : 'bg-muted-foreground/30'
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function GuideSection() {
   const [expandedStep, setExpandedStep] = useState<number | null>(null);
@@ -58,6 +121,10 @@ export function GuideSection() {
                       </li>
                     ))}
                   </ol>
+
+                  {step.images.length > 0 && (
+                    <ImageCarousel images={step.images} />
+                  )}
                 </div>
               )}
             </Card>

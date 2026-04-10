@@ -1,0 +1,5 @@
+lihat public/POS-PANGLIMA baca semua gambarnya
+
+lalu Update file lib/guide-data.ts
+
+tambahkan sesuai gambarnya di setiap data guide dan tampil di halaman
